@@ -15,7 +15,13 @@ const StyledDiv = styled.div`
     align-items: center;
     width: 30vw;
     margin-top: 10px;
+    margin-bottom: 10px;
     cursor: pointer;
+    &:hover {
+        transition: all 0.5s ease-in-out;
+        background-color: #666666;
+    }
+    transition: all 0.5s ease-in-out;
 `
 const StyledName = styled.p`
     padding-left: 10px;

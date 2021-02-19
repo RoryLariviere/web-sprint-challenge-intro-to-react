@@ -5,6 +5,7 @@ import Character from './components/Character';
 import Details from './components/Details';
 import styled from 'styled-components';
 
+
 const StyledApp = styled.div`
   display: flex;
   flex-direction: column;
@@ -23,6 +24,21 @@ const StyledH1 = styled.h1`
   border-right: 3px solid #FFE81F;
   padding: 20px;
   border-radius: 25px 0px 25px 0px;
+`
+const StyledFooter = styled.footer`
+  width: 100%;
+  height: 20vh;
+  background-color: #444444;
+  color: #E0E0E0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  box-shadow: inset 0 0 10px #000000;
+`
+const StyledCopyright = styled.p`
+  padding: 10px;
+  font-size: 0.7rem;
 `
 
 const App = () => {
@@ -60,11 +76,17 @@ const App = () => {
       {
         characterData.map(char=>{
           return <Character key={char.url} info={char} action={openDetails} />
+          
         })
       }
       {
         currentCharUrl && <Details charUrl={currentCharUrl} close={closeDetails} />
       }
+      
+      <StyledFooter>
+        <StyledCopyright>Created by Rory Lariviere</StyledCopyright>
+      </StyledFooter>
+      
     </StyledApp>
   );
 }
